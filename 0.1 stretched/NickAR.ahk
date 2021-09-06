@@ -23,7 +23,7 @@ If not A_IsAdmin {
 
 GoSub, IniRead
 
-; Script Version V 0.1 Stretched Beta By Cyde And Nick (sayoui001)
+; Script Version V 0.6
 
 ; ----VarSection----
 
@@ -41,7 +41,6 @@ Global Flatline_Weapon := "Flatline"
 Global Wingman_Weapon := "Wingman"
 Global Prowler_Weapon := "Prowler"
 Global Hemlok_Weapon := "Hemlok"
-Global Repeater_Weapon := "Repeater"
 Global Rampage_Weapon := "Rampage"
 Global RampageAmp_Weapon := "RampageAmp"
 ; Energy
@@ -241,7 +240,7 @@ Loop {
 
 Check_Weapon(Weapon_Pic) {
     loop, 3 {
-        ImageSearch, FoundX, FoundY, 1330, 980, 1596, 1030,*50 %A_ScriptDir%\Image\%Weapon_pic%.png
+        ImageSearch, FoundX, FoundY, 1570, 955, 1720, 1027,*70 %A_ScriptDir%\NewImage\%Weapon_pic%.png
 		If (ErrorLevel != 0) {
 		Return False
         }
@@ -255,9 +254,9 @@ Detect_Weapon() {
 	Global RapidMode := 0
 	Return R99_Weapon 
 	}
-	Else If (Check_Weapon("R99")) {
+	If (Check_Weapon("R992")) {
 	Global RapidMode := 0
-	Return R99_Weapon
+	Return R99_Weapon 
 	}
 	Else If (Check_Weapon("R301")) {
 	Global RapidMode := 0
@@ -286,11 +285,11 @@ Detect_Weapon() {
 	Else If (Check_Weapon("G7")) {
 	Global RapidMode := 1
 	Return G7_Weapon
-	}	
+	}
 	Else If (Check_Weapon("G72")) {
 	Global RapidMode := 1
 	Return G7_Weapon
-	}
+	}	
 	; Heavy
 	Else If (Check_Weapon("Flatline")) {
 	Global RapidMode := 0
@@ -340,20 +339,11 @@ Detect_Weapon() {
 	Global RapidMode := 1
 	Return Wingman_Weapon
 	}
-	Else If (Check_Weapon("Repeater")) {
-	Global RapidMode := 1
-	Return Repeater_Weapon
-	}
-	Else If (Check_Weapon("Repeater2")) {
-	Global RapidMode := 1
-	Return Repeater_Weapon
-	}
 	; Energy
 	Else If (Check_Weapon("Volt")) {
 	Global RapidMode := 0
 	Return Volt_Weapon
 	}
-	; Energy
 	Else If (Check_Weapon("Volt2")) {
 	Global RapidMode := 0
 	Return Volt_Weapon
@@ -378,28 +368,7 @@ Detect_Weapon() {
 	Global RapidMode := 0
 	Return Devotion_Weapon
 	}
-	Else If (Check_Weapon("Devotion2")) {
-		If (Check_Weapon("Turbocharge")) {
-		Global RapidMode := 0
-		Return DevotionTurbo_Weapon
-		}
-		If (Check_Weapon("TurbochargeArena")) {
-		Global RapidMode := 0
-		Return DevotionTurbo_Weapon
-		}
-	Global RapidMode := 0
-	Return Devotion_Weapon
-	}
 	Else If (Check_Weapon("Havoc")) {
-		If (Check_Weapon("Turbocharge")) {
-		Global RapidMode := 0
-		Return HavocTurbo_Weapon
-		}
-		If (Check_Weapon("TurbochargeArena")) {
-		Global RapidMode := 0
-		Return HavocTurbo_Weapon
-		}
-	Else If (Check_Weapon("Havoc2")) {
 		If (Check_Weapon("Turbocharge")) {
 		Global RapidMode := 0
 		Return HavocTurbo_Weapon
@@ -416,7 +385,6 @@ Detect_Weapon() {
 	Global RapidMode := 0
 	Return Spitfire_Weapon
 	}
-	; Airdrop
 	Else If (Check_Weapon("Spitfire2")) {
 	Global RapidMode := 0
 	Return Spitfire_Weapon
