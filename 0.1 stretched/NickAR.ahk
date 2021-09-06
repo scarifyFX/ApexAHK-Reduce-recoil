@@ -255,7 +255,15 @@ Detect_Weapon() {
 	Global RapidMode := 0
 	Return R99_Weapon 
 	}
+	Else If (Check_Weapon("R99")) {
+	Global RapidMode := 0
+	Return R99_Weapon
+	}
 	Else If (Check_Weapon("R301")) {
+	Global RapidMode := 0
+	Return R301_Weapon
+	}
+	Else If (Check_Weapon("R3012")) {
 	Global RapidMode := 0
 	Return R301_Weapon
 	}
@@ -263,7 +271,15 @@ Detect_Weapon() {
 	Global RapidMode := 0
 	Return RE45_Weapon
 	}
+	Else If (Check_Weapon("RE452")) {
+	Global RapidMode := 0
+	Return RE45_Weapon
+	}
 	Else If (Check_Weapon("P2020")) {
+	Global RapidMode := 1
+	Return P2020_Weapon
+	}
+	Else If (Check_Weapon("P20202")) {
 	Global RapidMode := 1
 	Return P2020_Weapon
 	}
@@ -271,8 +287,16 @@ Detect_Weapon() {
 	Global RapidMode := 1
 	Return G7_Weapon
 	}	
+	Else If (Check_Weapon("G72")) {
+	Global RapidMode := 1
+	Return G7_Weapon
+	}
 	; Heavy
 	Else If (Check_Weapon("Flatline")) {
+	Global RapidMode := 0
+	Return Flatline_Weapon
+	}
+	Else If (Check_Weapon("Flatline2")) {
 	Global RapidMode := 0
 	Return Flatline_Weapon
 	}
@@ -284,7 +308,19 @@ Detect_Weapon() {
 	Global RapidMode := 0
 	Return Rampage_Weapon
 	}
+	Else If (Check_Weapon("Rampage2")) {
+		If (Check_Weapon("Amp")) {
+		Global RapidMode := 0
+		Return RampageAmp_Weapon
+		}
+	Global RapidMode := 0
+	Return Rampage_Weapon
+	}
 	Else If (Check_Weapon("Hemlok")) {
+	Global RapidMode := 1
+	Return Hemlok_Weapon
+	}
+	Else If (Check_Weapon("Hemlok2")) {
 	Global RapidMode := 1
 	Return Hemlok_Weapon
 	}
@@ -292,11 +328,23 @@ Detect_Weapon() {
 	Global RapidMode := 1
 	Return Prowler_Weapon
 	}
+	Else If (Check_Weapon("Prowler2")) {
+	Global RapidMode := 1
+	Return Prowler_Weapon
+	}
 	Else If (Check_Weapon("Wingman")) {
 	Global RapidMode := 1
 	Return Wingman_Weapon
 	}
+	Else If (Check_Weapon("Wingman2")) {
+	Global RapidMode := 1
+	Return Wingman_Weapon
+	}
 	Else If (Check_Weapon("Repeater")) {
+	Global RapidMode := 1
+	Return Repeater_Weapon
+	}
+	Else If (Check_Weapon("Repeater2")) {
 	Global RapidMode := 1
 	Return Repeater_Weapon
 	}
@@ -305,11 +353,32 @@ Detect_Weapon() {
 	Global RapidMode := 0
 	Return Volt_Weapon
 	}
+	; Energy
+	Else If (Check_Weapon("Volt2")) {
+	Global RapidMode := 0
+	Return Volt_Weapon
+	}
 	Else If (Check_Weapon("Lstar")) {
 	Global RapidMode := 0
 	Return Lstar_Weapon
 	}
+	Else If (Check_Weapon("Lstar2")) {
+	Global RapidMode := 0
+	Return Lstar_Weapon
+	}
 	Else If (Check_Weapon("Devotion")) {
+		If (Check_Weapon("Turbocharge")) {
+		Global RapidMode := 0
+		Return DevotionTurbo_Weapon
+		}
+		If (Check_Weapon("TurbochargeArena")) {
+		Global RapidMode := 0
+		Return DevotionTurbo_Weapon
+		}
+	Global RapidMode := 0
+	Return Devotion_Weapon
+	}
+	Else If (Check_Weapon("Devotion2")) {
 		If (Check_Weapon("Turbocharge")) {
 		Global RapidMode := 0
 		Return DevotionTurbo_Weapon
@@ -330,6 +399,15 @@ Detect_Weapon() {
 		Global RapidMode := 0
 		Return HavocTurbo_Weapon
 		}
+	Else If (Check_Weapon("Havoc2")) {
+		If (Check_Weapon("Turbocharge")) {
+		Global RapidMode := 0
+		Return HavocTurbo_Weapon
+		}
+		If (Check_Weapon("TurbochargeArena")) {
+		Global RapidMode := 0
+		Return HavocTurbo_Weapon
+		}
 	Global RapidMode := 0
 	Return Havoc_Weapon
 	}
@@ -338,7 +416,16 @@ Detect_Weapon() {
 	Global RapidMode := 0
 	Return Spitfire_Weapon
 	}
+	; Airdrop
+	Else If (Check_Weapon("Spitfire2")) {
+	Global RapidMode := 0
+	Return Spitfire_Weapon
+	}
 	Else If (Check_Weapon("Alternator")) {
+	Global RapidMode := 0
+	Return Alternator_Weapon
+	}
+	Else If (Check_Weapon("Alternator2")) {
 	Global RapidMode := 0
 	Return Alternator_Weapon
 	}
